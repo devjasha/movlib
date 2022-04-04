@@ -1,0 +1,3 @@
+[submodule "lib/movlib-api"]
+	path = lib/movlib-api
+	url = https://github.com/devjasha/moviedb-api-request.git
