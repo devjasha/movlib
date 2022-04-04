@@ -1,0 +1,20 @@
+{
+  "name": "movlib",
+  "version": "1.0.0",
+  "description": "This is a movie library",
+  "scripts": {
+    "fetch": "cd ./lib/movlib-api && npm start -- -dir=../../content/movies",
+    "start": "hugo server --bind=\"0.0.0.0\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devjasha/movlib.git"
+  },
+  "author": "Jasha Chec",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devjasha/movlib/issues"
+  },
+  "homepage": "https://github.com/devjasha/movlib#readme"
+}
