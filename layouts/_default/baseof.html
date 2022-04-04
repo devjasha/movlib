@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovLib</title>
+
+  {{ $css := resources.Get "scss/main.scss" | toCSS (dict "targetPath" "css/main.css" "minify" true) }}
+  <!-- <link rel="stylesheet" href="{{ $css.Permalink }}"> -->
+  <style>
+    {{ $css.Content | safeCSS }}
+  </style>
+</head>
+
+<body>
+  {{ partial "modules/m-header.html" . }}
+  {{ block "main" . }}{{ end }}
+
+  {{ $js := resources.Get "js/main.js" | js.Build "js/main.js" }}
+  <script src="{{ $js.Permalink }}"></script>
+
+  {{ $jsAnimation := resources.Get "js/animation.js" | js.Build "js/animation.js" }}
+  <script src="{{ $jsAnimation.Permalink }}"></script>
+</body>
+
+</html>
