@@ -1,0 +1,49 @@
+<div class="movie-list">
+  {{ range (where .Site.Pages "Section" "movies") }}
+    {{ range sort .Pages ".Params.vote_average" }}
+      {{/* Permalink for detail page */}}
+      {{ $permalink := .Permalink }}
+      {{ with .Params }}
+        {{ $name := index .name }}
+        {{ $genre := index .genres 0 }}
+        {{ $status := index .status }}
+        {{ $description := index .description}}
+        {{ $vote := index .vote_average }}
+        {{ $poster := index .poster }}
+        <div class="movie-card">
+          <a href="">
+            {{ if eq $poster  "https://image.tmdb.org/t/p/original/"}}
+              <img class="movie-image" src="/images/movie-not-found.png" alt="">
+            {{ end }}
+            <img class="movie-image" src="{{ .poster }}" alt="">
+          </a>
+          <div class="info-box-wrapper">
+            <input type="checkbox" class="checkbox" for="info-box-expandline"/>
+            <div class="info-box">
+              <div class="info-box-closedot"></div>
+              <img class="filter-image" src="{{ $poster }}" alt="">
+
+              <div class="filter">
+                <div class="text-box">
+                  <div class="header">
+                    <h1 class="genre">{{ $genre }}</h1>
+                    <p class="status">{{ $status }}</p>
+                  </div>
+                  <div class="text">
+                    <p class="description">{{ $description }}</p>
+                  </div>
+                  <div class="button-vote">
+                    <a class="button" href="#">Info</a>
+                    <div class="vote">
+                      <p class="count">{{ $vote}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>

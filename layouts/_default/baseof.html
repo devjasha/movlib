@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MovLib</title>
 
-  {{ $css := resources.Get "scss/main.scss" | toCSS (dict "targetPath" "css/main.css" "minify" true) }}
+  {{ $css := resources.Get "./scss/main.scss" | toCSS (dict "targetPath" "css/main.css" "minify" true) }}
   <!-- <link rel="stylesheet" href="{{ $css.Permalink }}"> -->
   <style>
     {{ $css.Content | safeCSS }}

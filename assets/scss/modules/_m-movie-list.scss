@@ -1,0 +1,213 @@
+.movie-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .movie-card {
+    height: 100%;
+    width: 250px;
+    margin-bottom: 180px;
+    position: relative;
+
+    .movie-image {
+      height: auto;
+      width: 250px;
+      border-radius: 25px 25px 25px 25px;
+    }
+
+    .info-box-wrapper {
+      position: absolute;
+      bottom: -24%;
+      height: 250px;
+      width: 250px;
+
+      .checkbox {
+        position: absolute;
+        bottom: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 3px;
+        width: 50px;
+        z-index: 2;
+      }
+
+      .checkbox:before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 50px;
+        background-color: rgba($color: rgb(187, 185, 185), $alpha: 1 );
+        border-radius: 50px;
+      }
+
+      .checkbox:checked {
+        top: 5%;
+      }
+
+      .checkbox:checked ~ .info-box {
+        height: 250px;
+
+        .info-box-expandline {
+          top: 5%;
+        }
+
+        .filter {
+          align-items: flex-start !important;
+        }
+
+        .text-box {
+          margin-top: 20px;
+
+          .text {
+            display: block;
+            margin-top: 15px;
+          }
+        }
+
+        .button-vote {
+          display: block;
+          display: flex;
+        }
+      }
+
+      .checkbox:checked ~ .filter {
+        background-color: transparent;
+      }
+
+      .info-box {
+        position: absolute;
+        bottom: 0;
+        height: 80px;
+        width: 250px;
+        transition: 0.3s;
+
+        .info-box-expandline {
+          position: absolute;
+          top: 15%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 3px;
+          width: 50px;
+          background-color: rgba($color: #fff, $alpha: 0.3);
+          border-radius: 50px;
+          z-index: 1;
+        }
+
+        .info-box-closedot {
+          position: absolute;
+          top: 15%;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          height: 20px;
+          width: 20px;
+          background-color: rgba($color: #fff, $alpha: 0.3);
+          border-radius: 50px;
+          z-index: 1;
+          display: none;
+        }
+
+        .filter {
+          height: 100%;
+          width: 100%;
+          backdrop-filter: blur(30px);
+          border-radius: 25px 25px 25px 25px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+
+          &-image {
+            height: 100%;
+            width: 250px;
+            position: absolute;
+            border-radius: 25px 25px 25px 25px;
+          }
+        }
+
+        .text-box {
+          padding: 20px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+
+          .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .genre {
+              font-size: 16px;
+              font-family: "Sora", sans-serif;
+              color: #fff;
+            }
+            .status {
+              font-size: 10px;
+              background-color: green;
+              width: 50px;
+              padding: 4px 6px;
+              text-align: center;
+              border-radius: 20px;
+              font-family: "Sora-Regular", sans-serif;
+              color: #fff;
+            }
+          }
+
+          .text {
+            display: none;
+            max-height: 100px;
+            overflow-y: scroll;
+
+            .description {
+              font-family: "Sora-Regular", sans-serif;
+              color: #fff;
+              font-size: 12px ;
+            }
+          }
+
+          .button-vote {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            display: none;
+            margin-top: 20px;
+
+            .button {
+              padding: 5px 10px;
+              width: 30px;
+              background: red;
+              text-decoration: none;
+              color: #fff;
+              border-radius: 50px;
+              font-size: 12px;
+              text-align: center;
+              font-family: "Sora-Regular", sans-serif;
+            }
+
+            .vote {
+              height: 25px;
+              width: 25px;
+              background: green;
+              border-radius: 50px;
+              position: relative;
+              padding: 0 5px;
+
+              .count {
+                color: #fff;
+                font-family: "Sora-Regular", sans-serif;
+                color: #fff;
+                font-size: 12px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
