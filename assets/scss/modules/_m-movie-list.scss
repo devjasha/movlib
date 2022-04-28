@@ -4,6 +4,10 @@
   justify-content: center;
   flex-direction: column;
 
+  .hide {
+    display: none;
+  }
+
   .movie-card {
     height: 100%;
     width: 250px;
