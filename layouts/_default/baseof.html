@@ -18,11 +18,8 @@
   {{ partial "modules/m-header.html" . }}
   {{ block "main" . }}{{ end }}
 
-  {{ $js := resources.Get "js/main.js" | js.Build "js/main.js" }}
-  <script src="{{ $js.Permalink }}"></script>
-
-  {{ $jsAnimation := resources.Get "js/animation.js" | js.Build "js/animation.js" }}
-  <script src="{{ $jsAnimation.Permalink }}"></script>
+  {{ $javascript := resources.Get "scripts/main.ts" | js.Build }}
+  <script src="{{ $javascript.Permalink }}"></script>
 </body>
 
 </html>
