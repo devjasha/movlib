@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/devjasha/movlib/issues"
   },
-  "homepage": "https://github.com/devjasha/movlib#readme"
+  "homepage": "https://github.com/devjasha/movlib#readme",
+  "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11"
+  }
 }

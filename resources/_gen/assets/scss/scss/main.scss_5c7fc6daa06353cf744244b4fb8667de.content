@@ -1,3 +1,216 @@
 * {
   margin: 0;
   padding: 0; }
+
+body {
+  background-color: #171717; }
+
+@font-face {
+  font-family: "Sora-bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Sora-bold.ttf") format("ttf"); }
+
+@font-face {
+  font-family: "Sora-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Sora-Regular.ttf") format("ttf"); }
+
+@font-face {
+  font-family: "Sora-Light";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/fonts/Sora-Light.ttf") format("ttf"); }
+
+.movie-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .movie-list .filter-wrapper {
+    width: 100%;
+    height: auto;
+    margin: 50px 50px; }
+    .movie-list .filter-wrapper .filter-headline-wrapper {
+      padding: 0 40px;
+      color: #fff;
+      font-family: "Helvetica Neue", sans-serif;
+      letter-spacing: 3.8px; }
+    .movie-list .filter-wrapper .filter-button-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 10px 40px; }
+    .movie-list .filter-wrapper .filterButton {
+      border: none;
+      padding: 8px 20px;
+      background: #000;
+      border-radius: 55px;
+      color: #fff;
+      font-size: 10px;
+      margin: 10px 0; }
+    .movie-list .filter-wrapper .filter-genre-button {
+      text-decoration: none;
+      color: #fff;
+      padding: 8px 20px;
+      font-size: 10px;
+      background: #000;
+      border-radius: 55px;
+      font-family: "Sora", sans-serif; }
+  .movie-list .hide {
+    display: none; }
+  .movie-list .movie-card {
+    height: 100%;
+    width: 250px;
+    margin-bottom: 180px;
+    position: relative; }
+    .movie-list .movie-card .movie-image {
+      height: auto;
+      width: 250px;
+      border-radius: 25px 25px 25px 25px; }
+    .movie-list .movie-card .info-box-wrapper {
+      position: absolute;
+      bottom: -24%;
+      height: 250px;
+      width: 250px; }
+      .movie-list .movie-card .info-box-wrapper .checkbox {
+        position: absolute;
+        bottom: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 3px;
+        width: 50px;
+        z-index: 2; }
+      .movie-list .movie-card .info-box-wrapper .checkbox:before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 50px;
+        background-color: #bbb9b9;
+        border-radius: 50px; }
+      .movie-list .movie-card .info-box-wrapper .checkbox:checked {
+        top: 5%; }
+      .movie-list .movie-card .info-box-wrapper .checkbox:checked ~ .info-box {
+        height: 250px; }
+        .movie-list .movie-card .info-box-wrapper .checkbox:checked ~ .info-box .info-box-expandline {
+          top: 5%; }
+        .movie-list .movie-card .info-box-wrapper .checkbox:checked ~ .info-box .filter {
+          align-items: flex-start !important; }
+        .movie-list .movie-card .info-box-wrapper .checkbox:checked ~ .info-box .text-box {
+          margin-top: 20px; }
+          .movie-list .movie-card .info-box-wrapper .checkbox:checked ~ .info-box .text-box .text {
+            display: block;
+            margin-top: 15px; }
+        .movie-list .movie-card .info-box-wrapper .checkbox:checked ~ .info-box .button-vote {
+          display: block;
+          display: flex; }
+      .movie-list .movie-card .info-box-wrapper .checkbox:checked ~ .filter {
+        background-color: transparent; }
+      .movie-list .movie-card .info-box-wrapper .info-box {
+        position: absolute;
+        bottom: 0;
+        height: 80px;
+        width: 250px;
+        transition: 0.3s; }
+        .movie-list .movie-card .info-box-wrapper .info-box .info-box-expandline {
+          position: absolute;
+          top: 15%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 3px;
+          width: 50px;
+          background-color: rgba(255, 255, 255, 0.3);
+          border-radius: 50px;
+          z-index: 1; }
+        .movie-list .movie-card .info-box-wrapper .info-box .info-box-closedot {
+          position: absolute;
+          top: 15%;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          height: 20px;
+          width: 20px;
+          background-color: rgba(255, 255, 255, 0.3);
+          border-radius: 50px;
+          z-index: 1;
+          display: none; }
+        .movie-list .movie-card .info-box-wrapper .info-box .filter {
+          height: 100%;
+          width: 100%;
+          backdrop-filter: blur(30px);
+          border-radius: 25px 25px 25px 25px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          overflow: hidden; }
+          .movie-list .movie-card .info-box-wrapper .info-box .filter-image {
+            height: 100%;
+            width: 250px;
+            position: absolute;
+            border-radius: 25px 25px 25px 25px; }
+        .movie-list .movie-card .info-box-wrapper .info-box .text-box {
+          padding: 20px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center; }
+          .movie-list .movie-card .info-box-wrapper .info-box .text-box .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; }
+            .movie-list .movie-card .info-box-wrapper .info-box .text-box .header .genre {
+              font-size: 16px;
+              font-family: "Sora", sans-serif;
+              color: #fff; }
+            .movie-list .movie-card .info-box-wrapper .info-box .text-box .header .status {
+              font-size: 10px;
+              background-color: green;
+              width: 50px;
+              padding: 4px 6px;
+              text-align: center;
+              border-radius: 20px;
+              font-family: "Sora-Regular", sans-serif;
+              color: #fff; }
+          .movie-list .movie-card .info-box-wrapper .info-box .text-box .text {
+            display: none;
+            max-height: 100px;
+            overflow-y: scroll; }
+            .movie-list .movie-card .info-box-wrapper .info-box .text-box .text .description {
+              font-family: "Sora-Regular", sans-serif;
+              color: #fff;
+              font-size: 12px; }
+          .movie-list .movie-card .info-box-wrapper .info-box .text-box .button-vote {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            display: none;
+            margin-top: 20px; }
+            .movie-list .movie-card .info-box-wrapper .info-box .text-box .button-vote .button {
+              padding: 5px 10px;
+              width: 30px;
+              background: red;
+              text-decoration: none;
+              color: #fff;
+              border-radius: 50px;
+              font-size: 12px;
+              text-align: center;
+              font-family: "Sora-Regular", sans-serif; }
+            .movie-list .movie-card .info-box-wrapper .info-box .text-box .button-vote .vote {
+              height: 25px;
+              width: 25px;
+              background: green;
+              border-radius: 50px;
+              position: relative;
+              padding: 0 5px; }
+              .movie-list .movie-card .info-box-wrapper .info-box .text-box .button-vote .vote .count {
+                color: #fff;
+                font-family: "Sora-Regular", sans-serif;
+                color: #fff;
+                font-size: 12px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); }
