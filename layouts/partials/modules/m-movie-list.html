@@ -1,5 +1,18 @@
 <div class="movie-list">
-  <button class="comedyFilter">Comedy</button>
+  <div class="filter-wrapper">
+    <div class="filter-headline-wrapper">
+      <h1 class="filter-headline">
+        Filter:
+      </h1>
+    </div>
+    <div class="filter-button-wrapper">
+      <button class="highestVoteFilter filterButton">Vote</button>
+      <button class="comedyFilter filterButton">Comedy</button>
+      <button class="actionFilter filterButton">Action</button>
+      <button class="dramaFilter filterButton">Drama</button>
+      <button class="thrillerFilter filterButton">Thriller</button>
+    </div>
+  </div>
   {{ range (where .Site.Pages "Section" "movies") }}
     {{ range sort .Pages ".Params.vote_count" "desc" }}
       {{/* Permalink for detail page */}}
