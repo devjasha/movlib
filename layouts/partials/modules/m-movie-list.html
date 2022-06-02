@@ -2,7 +2,7 @@
   <div class="filter-wrapper">
     <div class="filter-headline-wrapper">
       <h1 class="filter-headline">
-        Filter:
+        Filter :
       </h1>
     </div>
     <div class="filter-button-wrapper">
@@ -13,50 +13,45 @@
       <button class="thrillerFilter filterButton">Thriller</button>
     </div>
   </div>
-  {{ range (where .Site.Pages "Section" "movies") }}
-    {{ range sort .Pages ".Params.vote_count" "desc" }}
-      {{/* Permalink for detail page */}}
-      {{ $permalink := .Permalink }}
-      {{ with .Params }}
-        {{ $name := index .name }}
-        {{ $genre := lower (index .genres 0) }}
-        {{ $status := index .status }}
-        {{ $description := index .description}}
-        {{ $vote := index .vote_average }}
-        {{ $poster := index .poster }}
-        <div class="movie-card movie-card--{{ $genre }}" id="card" data-type="{{ $genre }}">
-          <a href="">
-            {{ if eq $poster  "https://image.tmdb.org/t/p/original/"}}
-              <img class="movie-image" src="/images/movie-not-found.png" alt="">
-            {{ end }}
-            <img class="movie-image" src="{{ .poster }}" alt="">
-          </a>
-          <div class="info-box-wrapper">
-            <input type="checkbox" class="checkbox" for="info-box-expandline"/>
-            <div class="info-box">
-              <div class="info-box-closedot"></div>
-              <img class="filter-image" src="{{ $poster }}" onerror="this.onerror=null;this.src='/images/movie-not-found.png';" alt="poster image of the movie {{ $name }}">
-              <div class="filter">
-                <div class="text-box">
-                  <div class="header">
-                    <h1 class="genre">{{ $genre }}</h1>
-                    <p class="status">{{ $status }}</p>
-                  </div>
-                  <div class="text">
-                    <p class="description">{{ $description }}</p>
-                  </div>
-                  <div class="button-vote">
-                    <a class="button" href="#">Info</a>
-                    <div class="vote">
-                      <p class="count">{{ $vote}}</p>
+  <div class="movie-list-card-wrapper">
+    {{ range (where .Site.Pages "Section" "movies") }}
+      {{ range sort .Pages ".Params.vote_count" "desc" }}
+        {{/* Permalink for detail page */}}
+        {{ $permalink := .Permalink }}
+        {{ with .Params }}
+          {{ $name := index .name }}
+          {{ $genre := lower (index .genres 0) }}
+          {{ $status := index .status }}
+          {{ $description := index .description}}
+          {{ $vote := index .vote_average }}
+          {{ $poster := index .poster }}
+          <div class="movie-card movie-card--{{ $genre }}" id="card" data-type="{{ $genre }}">
+            <a href="{{ $permalink | relURL }}">
+              {{ if eq $poster  "https://image.tmdb.org/t/p/original/"}}
+                <img class="movie-image" src="/images/movie-not-found.png" alt="">
+              {{ end }}
+              <img class="movie-image" src="{{ .poster }}" alt="">
+            </a>
+            <div class="info-box-wrapper">
+              <div class="info-box">
+                <div class="info-box-closedot"></div>
+                <img class="filter-image" src="{{ $poster }}" onerror="this.onerror=null;this.src='/images/movie-not-found.png';" alt="poster image of the movie {{ $name }}">
+                <div class="filter">
+                  <div class="text-box">
+                    <div class="header">
+                      <h1 class="genre">{{ $genre }}</h1>
+                      <div class="vote">
+                        <img class="vote-image" src="/images/heart.png" alt="heart icon that show the vote">
+                        <p class="count">{{ $vote}}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        {{ end }}
       {{ end }}
     {{ end }}
-  {{ end }}
+  </div>
 </div>
