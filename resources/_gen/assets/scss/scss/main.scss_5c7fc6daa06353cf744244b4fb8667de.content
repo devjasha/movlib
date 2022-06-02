@@ -34,7 +34,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 100%; }
     @media only screen and (min-width: 756px) {
       .movie-list .movie-list-card-wrapper {
         flex-direction: row; } }
@@ -77,8 +78,11 @@ body {
   .movie-list .movie-card {
     height: 100%;
     width: 250px;
-    margin: 180px 100px;
+    margin: 180px auto;
     position: relative; }
+    @media only screen and (min-width: 756px) {
+      .movie-list .movie-card {
+        margin: 180px 100px; } }
     .movie-list .movie-card .movie-image {
       height: auto;
       width: 250px;
@@ -228,6 +232,9 @@ body {
     color: #fff;
     font-family: "Helvetica Neue", sans-serif;
     font-size: 50px; }
+    @media only screen and (min-width: 756px) {
+      .stage .headline {
+        font-size: 100px; } }
   .stage .arrow-down {
     height: 20px;
     width: auto;
@@ -268,7 +275,10 @@ body {
   width: auto;
   margin-top: 10px;
   right: 0px; }
-
+  @media only screen and (min-width: 756px) {
+    .navbar {
+      display: block;
+      margin-top: 0; } }
 .list {
   margin: 0;
   padding: 0;
@@ -276,42 +286,68 @@ body {
   background: #000;
   padding: 20px 40px;
   border-radius: 15px; }
+  @media only screen and (min-width: 756px) {
+    .list {
+      background-color: transparent;
+      padding: 0;
+      display: flex; } }
   .list .list-item {
     margin: 10px 0;
     font-family: "Helvetica Neue", sans-serif; }
+    @media only screen and (min-width: 756px) {
+      .list .list-item {
+        margin: 0 10px; } }
   .list .list-item a {
     text-decoration: none;
     color: #fff; }
 
 .navbar-input {
-  height: 50px;
+  height: auto;
   width: 50px; }
-
+  @media only screen and (min-width: 756px) {
+    .navbar-input {
+      display: none; } }
 .navbar-input-span {
   height: 2px;
   width: 30px;
   background-color: #fff;
   display: block;
-  margin-bottom: 8px; }
-
+  margin-bottom: 10px; }
+  @media only screen and (min-width: 756px) {
+    .navbar-input-span {
+      display: none; } }
 #navbar-input {
   display: none; }
 
 #navbar-input:checked ~ .navbar {
   display: block; }
 
-.navbar-input:checked ~ span {
+#navbar-input:checked ~ .navbar-input-span {
   display: none; }
 
 .single-page-stage {
-  padding: 100px 40px; }
+  padding: 100px 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto; }
+  @media only screen and (min-width: 756px) {
+    .single-page-stage {
+      display: flex;
+      justify-content: space-around;
+      align-items: center; } }
   .single-page-stage .header-image-single {
+    max-width: 350px;
     width: 100%;
+    height: auto;
     border-radius: 10px; }
   .single-page-stage .information-wrapper {
     text-align: left; }
+    @media only screen and (min-width: 756px) {
+      .single-page-stage .information-wrapper {
+        margin-left: 50px; } }
     .single-page-stage .information-wrapper .row1 {
-      margin-bottom: 60px; }
+      margin-bottom: 60px;
+      max-width: 450px; }
       .single-page-stage .information-wrapper .row1-header {
         display: flex;
         flex-wrap: wrap;
@@ -363,17 +399,23 @@ body {
       background-color: #2d2c2c;
       border-radius: 10px;
       color: #fff;
-      padding: 20px 25px; }
+      padding: 20px 25px;
+      display: flex;
+      align-items: center; }
     .single-page-stage .information-wrapper .row4 {
       grid-column: 3 / 4;
       grid-row: 2 / 4;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      align-items: center;
       background-color: #2d2c2c;
       border-radius: 10px;
       color: #fff;
       padding: 20px 25px; }
+      .single-page-stage .information-wrapper .row4 .companieImage {
+        height: auto;
+        width: 60px; }
     .single-page-stage .information-wrapper .row5 {
       grid-column: 1 / 4;
       grid-row: 1;
@@ -381,6 +423,3 @@ body {
       border-radius: 10px;
       color: #fff;
       padding: 20px 25px; }
-    .single-page-stage .information-wrapper .companieImage {
-      height: 30px;
-      width: auto; }
