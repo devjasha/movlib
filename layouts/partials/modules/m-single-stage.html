@@ -1,8 +1,45 @@
-<div class="header-wrapper-single-page">
+<div class="single-page-stage">
     {{/* Permalink for detail page */}}
-      {{ $poster := index .Params.poster }}
-      <img src="{{ $poster }}" alt="poster of movie" class="header-image-single">
-      <div>
+    {{ $poster := index .Params.poster }}
+    {{ $name := index .Params.name }}
+    {{ $description := index .Params.description }}
+    {{ $status := index .Params.status }}
+    {{ $popularity := index .Params.popularity }}
+    {{ $releaseDate := index .Params.release_date }}
+    {{ $tagline := index .Params.tagline }}
+    {{ $voteAverage := index .Params.vote_average }}
+    {{ $voteCount := index .Params.vote_count }}
+    {{ $genre := (index .Params.genres 0) }}
+    {{ $budget := index .Params.budget }}
+    {{ $companieImage := (index .Params.companies 2)}}
 
+    <img src="{{ $poster }}" alt="poster of movie" class="header-image-single">
+    <div class="information-wrapper">
+      <div class="row1">
+        <div class="row1-header">
+          <h1 class="headline">{{ $name }}</h1>
+          <h1 class="genre">{{ $genre }}</h1>
+        </div>
+        <p class="tagline">{{ $tagline }}</p>
+        <p class="description">{{ $description }}</p>
       </div>
+      <h2 class="details-headline">Details: </h2>
+      <div class="details-grid">
+        <div class="row2">
+          <p class="status">{{ $status }}</p>
+          <p class="release-date">{{ $releaseDate }}</p>
+        </div>
+        <div class="row3">
+          <p>Popularity: {{ $popularity }}</p>
+        </div>
+        <div class="row4">
+          <img class="companieImage" src="{{ $companieImage }}" alt="">
+          <p>{{ $budget }}$</p>
+        </div>
+        <div class="row5">
+          <p>Vote average: {{ $voteAverage }}</p>
+          <p>Vote count: {{ $voteCount }}</p>
+        </div>
+      </div>
+    </div>
 </div>
