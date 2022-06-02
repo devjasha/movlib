@@ -4,23 +4,40 @@
   justify-content: center;
   flex-direction: column;
 
+  .movie-list-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @media only screen and (min-width: 756px) {
+      flex-direction: row;
+    }
+  }
+
   .filter-wrapper {
     width: 100%;
     height: auto;
     margin: 50px 50px;
+
+    @media only screen and (min-width: 756px) {
+      width: 500px;
+    }
 
     .filter-headline-wrapper {
       padding: 0 40px;
       color: #fff;
       font-family: "Helvetica Neue", sans-serif;
     }
-    
+
     .filter-button-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       padding: 10px 40px;
+      max-width: 5  00px;
     }
     .filterButton {
       border: none;
@@ -50,7 +67,7 @@
   .movie-card {
     height: 100%;
     width: 250px;
-    margin-bottom: 180px;
+    margin: 180px 100px;
     position: relative;
 
     .movie-image {
@@ -61,13 +78,13 @@
 
     .info-box-wrapper {
       position: absolute;
-      bottom: -24%;
+      bottom: -22%;
       height: 250px;
       width: 250px;
 
       .checkbox {
         position: absolute;
-        bottom: 25%;
+        bottom: 23%;
         left: 50%;
         transform: translate(-50%, -50%);
         height: 3px;
@@ -80,7 +97,7 @@
         position: absolute;
         height: 3px;
         width: 50px;
-        background-color: rgba($color: rgb(187, 185, 185), $alpha: 1 );
+        background-color: rgba($color: rgb(255, 255, 255), $alpha: 1 );
         border-radius: 50px;
       }
 
@@ -121,7 +138,7 @@
       .info-box {
         position: absolute;
         bottom: 0;
-        height: 80px;
+        height: 70px;
         width: 250px;
         transition: 0.3s;
 
@@ -169,7 +186,7 @@
         }
 
         .text-box {
-          padding: 20px;
+          padding: 10px 20px;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -180,20 +197,30 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             .genre {
               font-size: 16px;
               font-family: "Sora", sans-serif;
               color: #fff;
             }
-            .status {
-              font-size: 10px;
-              background-color: green;
-              width: 50px;
-              padding: 4px 6px;
-              text-align: center;
-              border-radius: 20px;
-              font-family: "Sora-Regular", sans-serif;
-              color: #fff;
+
+            .vote {
+              width: 45px;
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .vote-image {
+                height: 20px;
+              }
+
+              .count {
+                color: #fff;
+                font-family: "Sora-Regular", sans-serif;
+                color: #fff;
+                font-size: 14px;
+              }
             }
           }
 
@@ -219,7 +246,7 @@
 
             .button {
               padding: 5px 10px;
-              width: 30px;
+              min-width: 30px;
               background: red;
               text-decoration: none;
               color: #fff;
@@ -227,26 +254,6 @@
               font-size: 12px;
               text-align: center;
               font-family: "Sora-Regular", sans-serif;
-            }
-
-            .vote {
-              height: 25px;
-              width: 25px;
-              background: green;
-              border-radius: 50px;
-              position: relative;
-              padding: 0 5px;
-
-              .count {
-                color: #fff;
-                font-family: "Sora-Regular", sans-serif;
-                color: #fff;
-                font-size: 12px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-              }
             }
           }
         }

@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -15,3 +16,5 @@ body {
 // modules
 @import "./modules/_m-movie-list.scss";
 @import "./modules/_m-stage.scss";
+@import "./modules/_m-header.scss";
+@import "./modules/m-single-stage.scss";
