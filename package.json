@@ -5,7 +5,8 @@
   "scripts": {
     "fetch": "cd ./lib/movlib-api && npm start -- -dir=../../content/movies",
     "start": "hugo server --bind=\"0.0.0.0\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "hugo --gc --minify --environment production"
   },
   "repository": {
     "type": "git",

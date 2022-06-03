@@ -35,10 +35,9 @@
     .filter-button-wrapper {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       flex-wrap: wrap;
       padding: 10px 40px;
-      max-width: 5  00px;
+      max-width: 500px;
     }
     .filterButton {
       border: none;
@@ -47,7 +46,7 @@
       border-radius: 55px;
       color: #fff;
       font-size: 10px;
-      margin: 10px 0;
+      margin: 10px 10px 10px 0;
     }
 
     .filter-genre-button {
@@ -68,7 +67,7 @@
   .movie-card {
     height: 100%;
     width: 250px;
-    margin: 180px auto;
+    margin: 0 auto 180px auto;
     position: relative;
 
     @media only screen and (min-width: 756px) {
