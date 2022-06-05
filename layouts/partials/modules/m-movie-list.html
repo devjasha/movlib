@@ -22,22 +22,17 @@
   </div>
   <div class="movie-list-card-wrapper">
     {{ range (where .Site.Pages "Section" "movies") }}
-      {{ range sort .Pages ".Params.vote_count" "desc" }}
+      {{ range sort .Pages ".Params.vote_average" "desc" }}
         {{/* Permalink for detail page */}}
         {{ $permalink := .Permalink }}
         {{ with .Params }}
-          {{ $name := index .name }}
-          {{ $genre := lower (index .genres 0) }}
-          {{ $status := index .status }}
-          {{ $description := index .description}}
-          {{ $vote := index .vote_average }}
-          {{ $poster := index .poster }}
-          <div class="movie-card movie-card--{{ $genre }}" id="card" data-type="{{ $genre }}">
+          {{ $name := .name }}
+          {{ $genre_ids := .genre_ids }}
+          {{ $vote := .vote_average }}
+          {{ $poster := .poster_path }}
+          <div class="movie-card movie-card--{{ index $genre_ids 0 }}" id="card" data-type="{{ index $genre_ids 0 }}" href="{{ $permalink | relURL }}">
             <a href="{{ $permalink | relURL }}">
-              {{ if eq $poster  "https://image.tmdb.org/t/p/original/"}}
-                <img class="movie-image" src="/images/movie-not-found.png" alt="">
-              {{ end }}
-              <img class="movie-image" src="{{ .poster }}" alt="">
+              <img class="movie-image" src="{{ $poster }}" onerror="this.onerror=null;this.src='/images/movie-not-found.png';" alt="poster image of the movie {{ $name }}">
             </a>
             <div class="info-box-wrapper">
               <div class="info-box">
@@ -46,7 +41,9 @@
                 <div class="filter">
                   <div class="text-box">
                     <div class="header">
-                      <h1 class="genre">{{ $genre }}</h1>
+                      {{ range where $.Site.Data.genres.genres ".id" (int (index $genre_ids 0)) }}
+                        <h1 class="genre">{{ .name }}</h1>
+                      {{ end }}
                       <div class="vote">
                         <img class="vote-image" src="/images/heart.png" alt="heart icon that show the vote">
                         <p class="count">{{ $vote}}</p>

@@ -20,7 +20,7 @@ let movies = document.querySelectorAll(".movie-card")
 comedyFilter.addEventListener("click", showComedy)
 function showComedy() {
   for(let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "comedy") {
+    if (movies[i].getAttribute("data-type") !== "35") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -34,7 +34,7 @@ actionFilter.addEventListener("click", showAction);
 
 function showAction() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "action") {
+    if (movies[i].getAttribute("data-type") !== "28") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -48,7 +48,7 @@ dramaFilter.addEventListener("click", showDrama);
 
 function showDrama() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "drama") {
+    if (movies[i].getAttribute("data-type") !== "18") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -62,7 +62,7 @@ thrillerFilter.addEventListener("click", showThriller);
 
 function showThriller() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "thriller") {
+    if (movies[i].getAttribute("data-type") !== "53") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -74,7 +74,7 @@ adventureFilter.addEventListener("click", showAdventure)
 
 function showAdventure() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "adventure") {
+    if (movies[i].getAttribute("data-type") !== "12") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -86,7 +86,7 @@ animationFilter.addEventListener("click", showAnimation)
 
 function showAnimation() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "animation") {
+    if (movies[i].getAttribute("data-type") !== "16") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -98,7 +98,7 @@ fantasyFilter.addEventListener("click", showFantasy)
 
 function showFantasy() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "fantasy") {
+    if (movies[i].getAttribute("data-type") !== "14") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -110,7 +110,7 @@ horrorFilter.addEventListener("click", showHorror)
 
 function showHorror() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "horror") {
+    if (movies[i].getAttribute("data-type") !== "27") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -122,7 +122,7 @@ crimeFilter.addEventListener("click", showCrime)
 
 function showCrime() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "crime") {
+    if (movies[i].getAttribute("data-type") !== "80") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -134,7 +134,7 @@ scienceFictionFilter.addEventListener("click", showScienceFiction)
 
 function showScienceFiction() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "science fiction") {
+    if (movies[i].getAttribute("data-type") !== "878") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -146,7 +146,7 @@ familyFilter.addEventListener("click", showFamily)
 
 function showFamily() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "family") {
+    if (movies[i].getAttribute("data-type") !== "10751") {
       movies[i].classList.add("hide")
     } else {
       movies[i].classList.remove("hide")
@@ -161,7 +161,7 @@ highestVoteFilter.addEventListener("click", showHighestVote)
 
 function showHighestVote() {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].getAttribute("data-type") !== "thriller" || "comedy" || "action" || "drama" || "adventure" || "animation" || "fantasy" || "horror" || "crime" || "science fiction" || "family") {
+    if (movies[i].getAttribute("data-type") !== "53" || "35" || "28" || "18" || "12" || "16" || "14" || "27" || "80" || "878" || "10751") {
       movies[i].classList.remove("hide")
     }
   }

@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "This is a movie library",
   "scripts": {
-    "fetch": "cd ./lib/movlib-api && npm start -- -dir=../../content/movies",
+    "fetch": "cd ./lib/movlib-api && npm start -- -content-dir=../../content/movies -data-dir=../../data",
     "start": "hugo server --bind=\"0.0.0.0\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "hugo --gc --minify --environment production"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
